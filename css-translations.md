@@ -69,11 +69,16 @@ Scene styles
 }
 
 .scene.mod-x {
-  background: no-repeat url(https://dw9to29mmj727.cloudfront.net/promo/2016/5583-Tier07_Headers_BookHeroes_2000x800.jpg) center/cover;
+  background-repeat: no-repeat;
+  background-image: url(https://dw9to29mmj727.cloudfront.net/promo/2016/5583-Tier07_Headers_BookHeroes_2000x800.jpg);
+  background-position: center;
+  background-size: cover;
 }
 ```
 
 CSS animation
+
+The [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) CSS property lets you rotate, scale, skew, or translate an element. The formula used `calc(100% - 900px)` or `translateX(100%) translateX(-900px)`
 
 ```css
 @keyframes slide-x {
