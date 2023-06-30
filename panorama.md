@@ -32,7 +32,7 @@ Requires 3 [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introducti
 
 The CSS rules for panning through a scene depend on the direction of the translation.
 
-### [Translate X](https://codepen.io/spiderwebrobot/pen/YzRGXWX)
+### [Translate X](https://cdpn.io/pen/debug/YzRGXWX)
 
 Panning from the **left** side of a scene to the **right** side of a scene requires a fixed *scene-width*, e.g. `1125px`. The *scene-width* is subtracted from `100%` to calculate the end of the scene, e.g. `calc(100% - 1125px)`.
 
@@ -61,7 +61,7 @@ Panning from the **left** side of a scene to the **right** side of a scene requi
 }
 ```
 
-### [Translate Y](https://codepen.io/spiderwebrobot/pen/ExONOEj)
+### [Translate Y](https://cdpn.io/pen/debug/ExONOEj)
 
 Panning from the **top** of a scene to **bottom** of a scene requires a fixed *view-height*, e.g. `450px`. The *view-height* is added to `-100%` to calculate the end of the scene, e.g. `calc(-100% + 450px)`.
 
@@ -91,7 +91,7 @@ Panning from the **top** of a scene to **bottom** of a scene requires a fixed *v
 }
 ```
 
-### [Translate XY](https://codepen.io/spiderwebrobot/pen/RwqoLPX)
+### [Translate XY](https://cdpn.io/pen/debug/RwqoLPX)
 
 Panning from the **top-right** corner of a scene to the **bottom-left** corner of a scene requires a fixed *scene-width*, e.g. `2000px`, and a fixed *view-height*, e.g. `450px`.
 
@@ -122,7 +122,7 @@ Panning from the **top-right** corner of a scene to the **bottom-left** corner o
 }
 ```
 
-### [Translate YX](https://codepen.io/spiderwebrobot/pen/mdQOQMw)
+### [Translate YX](https://cdpn.io/pen/debug/mdQOQMw)
 
 Panning from the **top-left** corner of a scene to the **bottom-right** corner of a scene requires a fixed *scene-width*, e.g. `2000px`, and a fixed *view-height*, e.g. `450px`.
 
@@ -176,9 +176,37 @@ The good news, the Translate Y technique seems to work as expected. The bad news
 
 ## Improvements
 
-I had fun working on this project. I don’t know how useful these techniques are, but they can definitely be improved. Adding some curves to the linear movements would be a good start. Adding a little bounce to the beginning or ending of the translations wouldn’t hurt either. One thing’s for sure, sharing your solutions will only make them better, cheers!
+I had fun working on this project. I don’t know how useful these techniques are, but they can definitely be improved. Adding some curves to the linear movements would be a good start. This would allow for more visual coverage of a scene. That being said, we’d probably have to switch from [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions) to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations) to support changes in direction.
 
-- 
+There are some advantages to using CSS animations, including the ability to **pause** and **reverse** movements. Here is an example of how the *translate-element* could be refactored:
+
+```css
+.translate {
+  animation-direction: normal;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.translate.is-active {
+  animation-name: pan;
+}
+
+.translate.is-paused {
+  animation-play-state: paused;
+}
+
+.translate.mod-reverse {
+  animation-direction: reverse;
+}
+
+@keyframes pan {
+  to {
+    transform: translateX(100%) translateX(-1125px);
+  }
+}
+```
 
 ## Resources
 
