@@ -172,11 +172,11 @@ I also tried optimizing the techniques by using just 2 HTML elements instead of 
 </div>
 ```
 
-The good news, the Translate Y technique seems to work as expected. The bad news, the Translate X technique doesn’t move the scene at all ([🤔](https://codepen.io/spiderwebrobot/pen/GRwNzNR)). So if you only need to move a scene up and down, then by all means optimize! Otherwise, using 3 HTML elements will give you the flexibilty of moving up, down, and side to side.
+The good news, the Translate Y technique seems to work as expected. The bad news, the Translate X technique doesn’t move the scene at all ([🤔](https://cdpn.io/pen/debug/GRwNzNR)). So if you only need to move a scene up and down, then by all means optimize! Otherwise, using 3 HTML elements will give you the flexibilty of moving up, down, and side to side.
 
 ## Improvements
 
-I had fun working on this project. I don’t know how useful these techniques are, but they can definitely be improved. Adding some curves to the linear movements would be a good start. This would allow for more visual coverage of a scene. That being said, we’d probably have to switch from [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions) to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations) to support changes in direction.
+I had fun working on this project. I don’t know how useful these techniques are, but they can definitely be improved. Adding some curves to the linear movements would be a good start. This would allow for more visual coverage of a scene. That being said, you’d probably have to switch from [CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions) to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations) to support changes in direction.
 
 There are some advantages to using CSS animations, including the ability to **pause** and **reverse** movements. Here is an example of how the *translate-element* could be refactored:
 
