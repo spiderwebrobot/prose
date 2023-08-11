@@ -212,4 +212,4 @@ There are some advantages to using CSS animations, including the ability to **pa
 
 - [Why Moving Elements With Translate() Is Better Than Pos:abs Top/left](https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/)
 - [Not possible to use CSS calc() with transform:translateX in IE](https://stackoverflow.com/questions/21469350/not-possible-to-use-css-calc-with-transformtranslatex-in-ie)
-- [A Handy Little System for Animated Entrances in CSS](https://css-tricks.com/a-handy-little-system-for-animated-entrances-in-css/)
+- [Making CSS Animations Feel More Natural](https://css-tricks.com/making-css-animations-feel-natural/)
